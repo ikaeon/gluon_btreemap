@@ -1,0 +1,87 @@
+    Finished dev [unoptimized + debuginfo] target(s) in 0.32s
+     Running `target/debug/gluon_btree_map asx.glu`
+thread 'main' panicked at 'Attempted to pop Frame { offset: 0, state: Unknown, excess: false } but btreemap was expected', /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1936:13
+stack backtrace:
+   0:     0x560417dfebd5 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::hfbfe9ad65a0640ca
+   1:     0x560417e212bc - core::fmt::write::hb409a30975c0f9f5
+   2:     0x560417dfb3a3 - std::io::Write::write_fmt::h7ee7c68a0296cf9a
+   3:     0x560417e011d0 - std::panicking::default_hook::{{closure}}::h5e5a680f03f4adf9
+   4:     0x560417e00f2c - std::panicking::default_hook::hb8f06365ed415b3d
+   5:     0x560417e017d1 - std::panicking::rust_panic_with_hook::h1e03621439587007
+   6:     0x560417e013bb - rust_begin_unwind
+   7:     0x560417e0132b - std::panicking::begin_panic_fmt::hc43e1369214a6caa
+   8:     0x56041780e96e - gluon_vm::thread::OwnedContext::execute_function::he57b2c335cbbd129
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1936
+   9:     0x56041780c1ea - gluon_vm::thread::OwnedContext::execute::h966141c3a5ff9c60
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1804
+  10:     0x560417838363 - <gluon_vm::thread::Thread as gluon_vm::thread::ThreadInternal>::call_thunk::__call_thunk::{{closure}}::{{closure}}::h194f5b1a57e08197
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1164
+  11:     0x5604176fd9a3 - <futures_util::future::poll_fn::PollFn<F> as core::future::future::Future>::poll::hc1021a7d86d2872c
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-util-0.3.5/src/future/poll_fn.rs:54
+  12:     0x5604176c961d - std::future::poll_with_tls_context::h55bdb10eed80c98b
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:102
+  13:     0x560417838a47 - <gluon_vm::thread::Thread as gluon_vm::thread::ThreadInternal>::call_thunk::__call_thunk::{{closure}}::hd634e61b16579982
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1153
+  14:     0x5604176fc283 - <std::future::GenFuture<T> as core::future::future::Future>::poll::h042fd88462f7bc34
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:44
+  15:     0x56041707b9c2 - <core::pin::Pin<P> as core::future::future::Future>::poll::h3a3b6aa282c01018
+                               at /build/rust/src/rustc-1.43.1-src/src/libcore/future/future.rs:118
+  16:     0x560416f263ad - std::future::poll_with_tls_context::hbc44fd061a0fa8bc
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:102
+  17:     0x560416d49837 - gluon_vm::thread::ThreadInternal::call_thunk_top::__call_thunk_top::{{closure}}::hb23c7308b23d3c21
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon_vm-0.15.1/src/thread.rs:1086
+  18:     0x560416f33e63 - <std::future::GenFuture<T> as core::future::future::Future>::poll::hba805d3faaea55ba
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:44
+  19:     0x56041707b9c2 - <core::pin::Pin<P> as core::future::future::Future>::poll::h3a3b6aa282c01018
+                               at /build/rust/src/rustc-1.43.1-src/src/libcore/future/future.rs:118
+  20:     0x560416f263ad - std::future::poll_with_tls_context::hbc44fd061a0fa8bc
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:102
+  21:     0x560416da514f - <gluon::compiler_pipeline::CompileValue<E> as gluon::compiler_pipeline::Executable<()>>::run_expr::__run_expr::{{closure}}::hf8388ddc6731c48e
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon-0.15.1/src/compiler_pipeline.rs:1003
+  22:     0x560416f34203 - <std::future::GenFuture<T> as core::future::future::Future>::poll::hc0556192d25ba0fc
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:44
+  23:     0x56041707bc72 - <core::pin::Pin<P> as core::future::future::Future>::poll::h6d34394b5a55ddc4
+                               at /build/rust/src/rustc-1.43.1-src/src/libcore/future/future.rs:118
+  24:     0x560416f2568d - std::future::poll_with_tls_context::h9bdfd351f20fa928
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:102
+  25:     0x560416da1e01 - <C as gluon::compiler_pipeline::Executable<Extra>>::run_expr::__run_expr::{{closure}}::h763a9e2ad7f7bd42
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon-0.15.1/src/compiler_pipeline.rs:946
+  26:     0x560416f327c3 - <std::future::GenFuture<T> as core::future::future::Future>::poll::ha4431cbcfefe39b7
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:44
+  27:     0x56041707bc72 - <core::pin::Pin<P> as core::future::future::Future>::poll::h6d34394b5a55ddc4
+                               at /build/rust/src/rustc-1.43.1-src/src/libcore/future/future.rs:118
+  28:     0x560416f2568d - std::future::poll_with_tls_context::h9bdfd351f20fa928
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:102
+  29:     0x560416d1442e - gluon::ThreadExt::run_expr_async::__run_expr_async::{{closure}}::hc90305abecaf878e
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon-0.15.1/src/lib.rs:716
+  30:     0x560416d247de - <std::future::GenFuture<T> as core::future::future::Future>::poll::h95328ef373e8ac3b
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/future.rs:44
+  31:     0x560416d1a6ce - <core::pin::Pin<P> as core::future::future::Future>::poll::h80f13029f6d8ce7e
+                               at /build/rust/src/rustc-1.43.1-src/src/libcore/future/future.rs:118
+  32:     0x560416d14e26 - futures_executor::local_pool::block_on::{{closure}}::h9787f207c676f2c1
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-executor-0.3.5/src/local_pool.rs:317
+  33:     0x560416d14c0f - futures_executor::local_pool::run_executor::{{closure}}::hea3e10e8a0a23bf7
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-executor-0.3.5/src/local_pool.rs:87
+  34:     0x560416d13d68 - std::thread::local::LocalKey<T>::try_with::hf1547ca35c91751d
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/thread/local.rs:262
+  35:     0x560416d13c48 - std::thread::local::LocalKey<T>::with::h54487409fa7b7eff
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/thread/local.rs:239
+  36:     0x560416d14b36 - futures_executor::local_pool::run_executor::hb185ab5eabcb8aec
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-executor-0.3.5/src/local_pool.rs:83
+  37:     0x560416d14d8f - futures_executor::local_pool::block_on::hcef8f461bef31624
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/futures-executor-0.3.5/src/local_pool.rs:317
+  38:     0x560416d18a2a - gluon::ThreadExt::run_expr::h221fa402f3d17c3b
+                               at /home/me/.cargo/registry/src/github.com-1ecc6299db9ec823/gluon-0.15.1/src/lib.rs:682
+  39:     0x560416d22c03 - gluon_btree_map::main::hc74ed7a62935f615
+                               at src/main.rs:46
+  40:     0x560416d1345d - std::rt::lang_start::{{closure}}::h139e1903d63621af
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/rt.rs:67
+  41:     0x560417e01293 - std::panicking::try::do_call::hdcef0c1305ca8214
+  42:     0x560417e08917 - __rust_maybe_catch_panic
+  43:     0x560417e01cec - std::rt::lang_start_internal::h0354be261626f155
+  44:     0x560416d13427 - std::rt::lang_start::h0dda49b2a88a08f9
+                               at /build/rust/src/rustc-1.43.1-src/src/libstd/rt.rs:67
+  45:     0x560416d22f7a - main
+  46:     0x7fc0e2e80002 - __libc_start_main
+  47:     0x560416d130fe - _start
+  48:                0x0 - <unknown>

@@ -1,0 +1,14 @@
+let  { insert_string } = import! std.json.de
+let map @ { ? } = import! std.map
+let { (<>) } = import! std.semigroup
+let io = import! std.io
+let testb = import! testb
+
+let a = map.singleton "NAB" 0 <> map.singleton "b" 1 in
+let b =  testb.btree 0 in
+let aa = map.find "NAB" b in
+let c = match aa with
+        | Some x -> 11 
+								| None -> 0
+in io.print (show (c))
+
