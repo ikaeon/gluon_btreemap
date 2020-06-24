@@ -1,0 +1,11 @@
+let map = import! std.map // will panic without 
+let io = import! std.io
+let array = import! std.array
+let testb = import! testb
+
+let a = testb.tupletest 2
+let b = array.functor.map (\x->x._0) a
+//let b = array.functor.map (\x -> let (y,z) = x in y) a
+let c = array.index b 0
+io.print c 
+

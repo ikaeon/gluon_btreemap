@@ -18,10 +18,13 @@ use gluon::{
     Thread, ThreadExt,
 };
 
+fn tupletest(a:i32) -> Vec<(String,i32)> {
+  vec![("a".to_string(),a),("b".to_string(),a+1)]
+}
 
 fn btreemap(a:i32) -> BTreeMap<String,i32> {
   let mut r = BTreeMap::new();
-  r.insert(String::from("NAB"),a);
+//  r.insert(String::from("NAB"),a);
 //  r.insert(String::from("NNAB"),a);
   r
 }
@@ -29,7 +32,7 @@ fn btreemap(a:i32) -> BTreeMap<String,i32> {
 
 fn load_btree_map(vm: &Thread) -> gluon::vm::Result<gluon::vm::ExternModule> {
 
-    gluon::vm::ExternModule::new(vm, record!{btree => primitive!(1, btreemap)})
+    gluon::vm::ExternModule::new(vm, record!{btree => primitive!(1, btreemap), tupletest=>primitive!(1,tupletest)})
 }
 
 fn main() -> std::io::Result<()> {
