@@ -24,8 +24,8 @@ fn tupletest(a:i32) -> Vec<(String,i32)> {
 
 fn btreemap(a:i32) -> BTreeMap<String,i32> {
   let mut r = BTreeMap::new();
-//  r.insert(String::from("NAB"),a);
-//  r.insert(String::from("NNAB"),a);
+  r.insert(String::from("NAB"),a);
+  r.insert(String::from("NNAB"),a);
   r
 }
 

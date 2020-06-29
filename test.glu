@@ -4,6 +4,7 @@ let array = import! std.array
 let testb = import! testb
 
 let a = testb.tupletest 2
+//let a = [("a",1),("b",2)]
 let b = array.functor.map (\x->x._0) a
 //let b = array.functor.map (\x -> let (y,z) = x in y) a
 let c = array.index b 0
